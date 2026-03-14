@@ -177,9 +177,15 @@
       var bgImage = document.getElementById('bg-image');
       if (bgImage) bgImage.classList.remove('hidden');
     });
-    // Ensure video plays (required by some browsers for autoplay)
+    function tryPlay() {
+      if (bgVideo && !bgVideo.classList.contains('hidden')) {
+        var p = bgVideo.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+    }
+    bgVideo.addEventListener('loadeddata', tryPlay);
+    bgVideo.addEventListener('canplay', tryPlay);
     bgVideo.load();
-    var playPromise = bgVideo.play();
-    if (playPromise && playPromise.catch) playPromise.catch(function () {});
+    tryPlay();
   }
 })();
