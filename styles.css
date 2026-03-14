@@ -242,7 +242,7 @@ body {
   display: none;
   position: fixed;
   right: 2rem;
-  top: 50%;
+  top: 32%;
   transform: translateY(-50%);
   z-index: 20;
   width: 260px;
