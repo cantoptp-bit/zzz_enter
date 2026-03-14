@@ -51,6 +51,11 @@ body {
   inset: -40px;
   filter: brightness(var(--bg-brightness)) blur(var(--bg-blur));
   overflow: hidden;
+  opacity: 0;
+  animation: bgFadeIn 1s ease-out both;
+}
+@keyframes bgFadeIn {
+  to { opacity: 1; }
 }
 /* Default background: video only (no fallback image). */
 .bg-video {
@@ -93,6 +98,32 @@ body {
   opacity: 0.25;
   background: linear-gradient(transparent 50%, rgba(0,0,0,0.5) 50%);
   background-size: 100% 4px;
+}
+
+/* Staggered load-in: opacity only so we don't override layout transforms */
+@keyframes loadIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.load-in {
+  opacity: 0;
+  animation: loadIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.load-in-1 { animation-delay: 0.15s; }
+.load-in-2 { animation-delay: 0.35s; }
+.load-in-3 { animation-delay: 0.55s; }
+.load-in-4 { animation-delay: 0.75s; }
+.load-in-5 { animation-delay: 0.95s; }
+.load-in-6 { animation-delay: 1.15s; }
+.load-in-7 { animation-delay: 1.35s; }
+.load-in-8 { animation-delay: 1.55s; }
+.load-in-9 { animation-delay: 1.75s; }
+.load-in-10 { animation-delay: 1.95s; }
+
+.load-in-sidebar {
+  opacity: 0;
+  animation: loadIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
 
 /* Top center: Docs & Roadmap (disabled, coming soon) */
