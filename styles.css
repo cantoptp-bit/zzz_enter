@@ -57,7 +57,40 @@ body {
 @keyframes bgFadeIn {
   to { opacity: 1; }
 }
-/* Default background: video only (no fallback image). */
+/* CSS-only background (no video) — dark mesh with subtle magenta accent */
+.bg-css-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 120% 80% at 70% 20%, rgba(var(--primary-rgb), 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 120% at 20% 80%, rgba(88, 28, 135, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(15, 23, 59, 0.6) 0%, transparent 70%),
+    linear-gradient(180deg, #0a0c1a 0%, #0f0d1e 35%, #0a0c1a 70%, #050510 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  animation: bgMeshShift 18s ease-in-out infinite;
+}
+
+@keyframes bgMeshShift {
+  0%, 100% { filter: brightness(1); }
+  50%     { filter: brightness(1.04); }
+}
+
+/* Optional: very subtle grid for depth */
+.bg-css-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(var(--primary-rgb), 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* Default background: video (when re-enabled) */
 .bg-video {
   position: absolute;
   inset: 0;
