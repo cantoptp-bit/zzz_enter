@@ -11,15 +11,13 @@
 </head>
 <body>
   <div class="enter-page">
-    <!-- Background: Imgur album "amazing background" + video fallback -->
+    <!-- Background: video only (use direct MP4 URL when you have one) -->
     <div id="bg-wrap" class="bg-wrap">
-      <div class="bg-imgur-layer" aria-hidden="true">
-        <blockquote class="imgur-embed-pub" lang="en" data-id="a/zoYiAri"><a href="https://imgur.com/a/zoYiAri">amazing background</a></blockquote>
-      </div>
       <div class="bg-media-layer">
         <video id="bg-video" class="bg-video" muted loop autoplay playsinline preload="auto" aria-hidden role="presentation">
           <source src="https://placeholdervideo.dev/1920x1080" type="video/mp4" />
           <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />
+          <source src="/background/background-720p.mp4" type="video/mp4" />
           <source src="/background/14625362_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
       </div>
@@ -143,7 +141,6 @@
 
   </div>
 
-  <script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
   <script src="app.js"></script>
 </body>
 </html>
