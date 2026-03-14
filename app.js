@@ -170,10 +170,8 @@
     }
   }
 
-  // Default background: video from background/ folder (same directory as site)
-  var videoSrc = 'background/14625362_1920_1080_24fps.mp4';
+  // Background: video is set in HTML (root-relative /background/...). Fallback to image on error.
   if (bgVideo) {
-    bgVideo.src = videoSrc;
     bgVideo.addEventListener('error', function () {
       bgVideo.classList.add('hidden');
       var bgImage = document.getElementById('bg-image');
