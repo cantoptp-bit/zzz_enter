@@ -15,6 +15,8 @@ The background is an **MP4 file stored with Git LFS**. For the video to load on 
 
 If Git LFS is off, Vercel only deploys the small pointer file, so the video never loads and you'll see the fallback image instead.
 
+**If the video still doesn't play after enabling LFS and redeploying:** the deployed file may still be the LFS pointer. Upload the MP4 to [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (or any CDN), then in `index.html` set the video `<source src="..." />` to that URL (e.g. `https://xxx.blob.vercel-storage.com/14625362_1920_1080_24fps.mp4`). The video is the **default** background; the image only shows when the video fails to load.
+
 ---
 
 ## Run locally (with video working)

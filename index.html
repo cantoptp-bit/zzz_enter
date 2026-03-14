@@ -11,13 +11,13 @@
 </head>
 <body>
   <div class="enter-page">
-    <!-- Default background: MP4 video (fallback image only on load error) -->
+    <!-- Default background: MP4 video. Image only shows if video fails to load. -->
     <div id="bg-wrap" class="bg-wrap">
       <div class="bg-media-layer">
-        <video id="bg-video" class="bg-video" muted loop autoplay playsinline preload="auto" aria-hidden>
+        <video id="bg-video" class="bg-video" muted loop autoplay playsinline preload="auto" aria-hidden role="presentation">
           <source src="/background/14625362_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
-        <img id="bg-image" class="bg-image hidden" src="downloads/bg.jpg" alt="" />
+        <img id="bg-image" class="bg-image hidden" src="downloads/bg.jpg" alt="" role="presentation" />
       </div>
       <div class="tint-overlay" aria-hidden></div>
       <div class="vignette-overlay" aria-hidden></div>
