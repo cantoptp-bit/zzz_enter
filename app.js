@@ -170,12 +170,16 @@
     }
   }
 
-  // Background: video is set in HTML (root-relative /background/...). Fallback to image on error.
+  // Background: video from background/ folder. Fallback to image only if video fails to load.
   if (bgVideo) {
     bgVideo.addEventListener('error', function () {
       bgVideo.classList.add('hidden');
       var bgImage = document.getElementById('bg-image');
       if (bgImage) bgImage.classList.remove('hidden');
     });
+    // Ensure video plays (required by some browsers for autoplay)
+    bgVideo.load();
+    var playPromise = bgVideo.play();
+    if (playPromise && playPromise.catch) playPromise.catch(function () {});
   }
 })();

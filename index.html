@@ -11,10 +11,12 @@
 </head>
 <body>
   <div class="enter-page">
-    <!-- Default background: video from background/ (tint, blur, vignette via sliders) -->
+    <!-- Default background: MP4 video (fallback image only on load error) -->
     <div id="bg-wrap" class="bg-wrap">
       <div class="bg-media-layer">
-        <video id="bg-video" class="bg-video" muted loop autoplay playsinline aria-hidden src="/background/14625362_1920_1080_24fps.mp4"></video>
+        <video id="bg-video" class="bg-video" muted loop autoplay playsinline preload="auto" aria-hidden>
+          <source src="background/14625362_1920_1080_24fps.mp4" type="video/mp4" />
+        </video>
         <img id="bg-image" class="bg-image hidden" src="downloads/bg.jpg" alt="" />
       </div>
       <div class="tint-overlay" aria-hidden></div>
