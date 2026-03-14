@@ -40,13 +40,37 @@ body {
   padding-top: 8vh;
 }
 
-/* Default background (image from downloads/ or video) */
+/* Default background (Imgur album + video) */
 .bg-wrap {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
+
+.bg-imgur-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bg-imgur-layer iframe {
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.78vh;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .bg-media-layer {
+  z-index: 0;
   position: absolute;
   inset: -40px;
   filter: brightness(var(--bg-brightness)) blur(var(--bg-blur));
