@@ -170,12 +170,10 @@
     }
   }
 
-  // Background: video from background/ folder. Fallback to image only if video fails to load.
+  // Background: video only. If it fails to load, page keeps solid dark background (no fallback image).
   if (bgVideo) {
     bgVideo.addEventListener('error', function () {
       bgVideo.classList.add('hidden');
-      var bgImage = document.getElementById('bg-image');
-      if (bgImage) bgImage.classList.remove('hidden');
     });
     function tryPlay() {
       if (bgVideo && !bgVideo.classList.contains('hidden')) {

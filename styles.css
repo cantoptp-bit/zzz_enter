@@ -52,7 +52,7 @@ body {
   filter: brightness(var(--bg-brightness)) blur(var(--bg-blur));
   overflow: hidden;
 }
-/* Default background: video. Image is fallback only (shown via JS on video error). */
+/* Default background: video only (no fallback image). */
 .bg-video {
   position: absolute;
   inset: 0;
@@ -61,16 +61,7 @@ body {
   object-fit: cover;
   z-index: 1;
 }
-.bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-.bg-video.hidden,
-.bg-image.hidden {
+.bg-video.hidden {
   display: none;
 }
 .tint-overlay {

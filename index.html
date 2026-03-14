@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="enter-page">
-    <!-- Default background: Pexels video (works on Vercel without LFS). Image only if video fails. -->
+    <!-- Default background: video only. No fallback image. -->
     <div id="bg-wrap" class="bg-wrap">
       <div class="bg-media-layer">
         <video id="bg-video" class="bg-video" muted loop autoplay playsinline preload="auto" aria-hidden role="presentation">
@@ -19,7 +19,6 @@
           <source src="https://videos.pexels.com/video-files/34518028/34518028.mp4" type="video/mp4" />
           <source src="/background/14625362_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
-        <img id="bg-image" class="bg-image hidden" src="downloads/bg.jpg" alt="" role="presentation" />
       </div>
       <div class="tint-overlay" aria-hidden></div>
       <div class="vignette-overlay" aria-hidden></div>
