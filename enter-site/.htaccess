@@ -1,0 +1,4 @@
+# Serve this folder as static files (Enter page only).
+# Do not rewrite to the main app.
+DirectoryIndex index.html
+Options -Indexes

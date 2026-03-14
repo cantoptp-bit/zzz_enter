@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEGASUS — Enter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="enter-page">
+    <!-- Default background: video from background/ (tint, blur, vignette via sliders) -->
+    <div id="bg-wrap" class="bg-wrap">
+      <div class="bg-media-layer">
+        <video id="bg-video" class="bg-video" muted loop autoplay playsinline aria-hidden></video>
+        <img id="bg-image" class="bg-image hidden" src="downloads/bg.jpg" alt="" />
+      </div>
+      <div class="tint-overlay" aria-hidden></div>
+      <div class="vignette-overlay" aria-hidden></div>
+    </div>
+
+    <div class="glow-overlay" aria-hidden></div>
+    <div class="scanline-overlay" aria-hidden></div>
+
+    <!-- Docs & Roadmap (disabled, coming soon) -->
+    <div class="top-buttons" aria-label="Coming soon">
+      <button type="button" disabled title="Coming soon" class="top-btn" aria-label="Documentation (coming soon)">
+        <span class="top-btn-line top-btn-line-top" aria-hidden></span>
+        <span class="top-btn-line top-btn-line-bottom" aria-hidden></span>
+        <svg class="top-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
+        <span class="top-btn-labels">
+          <span class="top-btn-text">Docs</span>
+          <span class="top-btn-coming-soon">Coming soon</span>
+        </span>
+      </button>
+      <button type="button" disabled title="Coming soon" class="top-btn" aria-label="Roadmap (coming soon)">
+        <span class="top-btn-line top-btn-line-top" aria-hidden></span>
+        <span class="top-btn-line top-btn-line-bottom" aria-hidden></span>
+        <svg class="top-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+        <span class="top-btn-labels">
+          <span class="top-btn-text">Roadmap</span>
+          <span class="top-btn-coming-soon">Coming soon</span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Features sidebar (desktop) -->
+    <aside class="features-sidebar" aria-label="Features">
+      <div class="features-line"></div>
+      <div class="features-inner">
+        <h3 class="features-title">Features</h3>
+        <ul class="features-list">
+          <li><span class="features-bullet"></span>AES-256 end-to-end encryption for all messages and media</li>
+          <li><span class="features-bullet"></span>Ephemeral temp chats — zero trace after session end</li>
+          <li><span class="features-bullet"></span>Encrypted IRC-style channels and communities</li>
+          <li><span class="features-bullet"></span>Zero-trust framework — we never see your keys</li>
+          <li><span class="features-bullet"></span>Server discovery and secure community access</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="enter-content">
+      <div class="hero">
+        <div class="pegasus-logo-wrap">
+          <img src="assets/pegasus-transparent.png" alt="" class="pegasus-logo" width="280" height="auto" />
+        </div>
+        <h1 class="title">PEGASUS</h1>
+        <div class="title-line" aria-hidden></div>
+      </div>
+
+      <div class="enter-btn-wrap">
+        <div class="enter-btn-frame" aria-hidden></div>
+        <span class="btn-line btn-line-top" aria-hidden></span>
+        <span class="btn-line btn-line-bottom" aria-hidden></span>
+        <button type="button" id="enter-btn" class="enter-btn" disabled aria-live="polite">
+          <span id="btn-label" class="btn-label">
+            <span class="btn-dot"></span>
+            <span id="btn-text">Coming Soon</span>
+            <svg class="btn-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Countdown (hidden when disabled in app.js) -->
+      <div id="countdown-wrap" class="countdown-wrap hidden">
+        <div class="countdown-row">
+          <div class="countdown-cell">
+            <span id="cd-days" class="countdown-value">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <span class="countdown-sep" aria-hidden>:</span>
+          <div class="countdown-cell">
+            <span id="cd-hours" class="countdown-value">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <span class="countdown-sep" aria-hidden>:</span>
+          <div class="countdown-cell">
+            <span id="cd-mins" class="countdown-value">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <span class="countdown-sep" aria-hidden>:</span>
+          <div class="countdown-cell">
+            <span id="cd-secs" class="countdown-value">00</span>
+            <span class="countdown-label">Sec</span>
+          </div>
+        </div>
+        <p class="countdown-caption">Launch in progress</p>
+      </div>
+    </main>
+
+    <!-- Terminal typewriter -->
+    <div class="terminal-lines" id="terminal-lines" aria-live="polite"></div>
+
+    <!-- Footer: Get updates -->
+    <footer class="page-footer">
+      <div class="newsletter-wrap">
+        <div class="newsletter-line newsletter-line-top" aria-hidden></div>
+        <div class="newsletter-inner">
+          <p class="newsletter-heading">Get updates</p>
+          <p class="newsletter-desc">Enter your email to be notified when we launch.</p>
+          <div id="newsletter-done" class="newsletter-done hidden">Thanks — we'll be in touch.</div>
+          <form id="newsletter-form" class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="email@example.com" required />
+            <span class="newsletter-form-divider" aria-hidden></span>
+            <button type="submit" class="newsletter-btn"><span>Subscribe</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></button>
+          </form>
+        </div>
+        <div class="newsletter-line newsletter-line-bottom" aria-hidden></div>
+      </div>
+    </footer>
+
+    <!-- Version -->
+    <span class="version-badge" aria-label="Version">v.0.1.1</span>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
